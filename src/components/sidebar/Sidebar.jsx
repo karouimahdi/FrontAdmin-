@@ -31,7 +31,7 @@ const Sidebar = () => {
   const navigate =useNavigate()
   const logout=()=>{
     localStorage.clear();
-    navigate("/log")
+    navigate("/login")
 }
   return (
     <div className="sidebar">

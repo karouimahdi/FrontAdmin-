@@ -29,7 +29,7 @@ if (id) {
 console.log("user", id);
 
 const getSingleUser = async (id)  => {
-  const response = await axios.get(`https://paneladminbackend.adaptable.app/agent/searchAg/${id}`);
+  const response = await axios.get(`http://localhost:3001/agent/searchAg/${id}`);
   if(response.status===200){
  setUser({ ...response.data })
  console.log("data" , response.data)
@@ -44,7 +44,7 @@ const handleSubmit = () => {
 
   // Handle validations
   axios
-    .put(`https://paneladminbackend.adaptable.app/agent/updatestatus/${id}`
+    .put(`http://localhost:3001/agent/updatestatus/${id}`
     ,{ headers: {
       'Content-Type': 'multipart/form-data',
     },})

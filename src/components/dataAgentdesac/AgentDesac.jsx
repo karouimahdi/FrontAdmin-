@@ -20,7 +20,7 @@ const Datatable = () => {
     getUsers();
   },[]);
   const getUsers = async () =>{
-    const response = await axios.get("https://paneladminbackend.adaptable.app/agent/getAgdes");
+    const response = await axios.get("http://localhost:3001/agent/getAgdes");
     if(response.status===200){
       setData(response.data)
     }
@@ -29,7 +29,7 @@ const Datatable = () => {
   // const handleDelete = async (id) => {
   //   if(window.confirm("Are you sure that you wanted to delete this client")
   //   ){
-  //     const response = await axios.delete(`https://paneladminbackend.adaptable.app/agent/destroyAg/${id}`);
+  //     const response = await axios.delete(`http://localhost:3001/agent/destroyAg/${id}`);
   //     if(response.status===200){
   //       toast.success('Agent Deleted with Success !', {
   //         position: toast.POSITION.TOP_RIGHT

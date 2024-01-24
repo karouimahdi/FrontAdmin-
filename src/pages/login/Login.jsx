@@ -25,7 +25,7 @@ const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   
       // Handle validations
       axios
-        .post("https://backend-admin-pfe.onrender.com/agent/loginAg", { email, password })
+        .post("http://localhost:3001/api/login", { email, password })
         .then(response => {
           const user = response.data
           setRole(user.role);
@@ -80,6 +80,11 @@ const isLoggedIn = window.localStorage.getItem("isLoggedIn")
         </p>
     </form>
     <footer>
+    <Link to={`/pass`} style={{ textDecoration: "none" }}>
+                <div className="forgot">Vous avez oublié votre mot de passe ?</div>
+                
+              </Link>
+      
         <p>First time? <Link to="/register">Create an account</Link>.</p>
         <p><Link to="/">Back to Homepage</Link>.</p>
     </footer>

@@ -50,7 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={isLoggedIn ? <Home/> : <Landingpage/>} />
             {/* <Route index element={<Landingpage />} /> */}
-            {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/login" element={<Login />} /> 
             <Route path="/log" element={<Log />} />
             <Route path="/pass" element={<Passwordforget />} />
             <Route path="/home" element={isLoggedIn ? <Home /> : <Landingpage/>} />

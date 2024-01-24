@@ -20,7 +20,7 @@ const DataTarif = () => {
       getUsers();
     },[]);
     const getUsers = async () =>{
-      const response = await axios.get("https://paneladminbackend.adaptable.app/Tar/show");
+      const response = await axios.get("http://localhost:3001/Tar/show");
       if(response.status===200){
         setData(response.data)
       }
