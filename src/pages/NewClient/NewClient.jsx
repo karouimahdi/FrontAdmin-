@@ -65,7 +65,7 @@ const NewClient = () => {
       
         // Handle validations
         axios
-          .post("http://localhost:3001/Client/AjoutCl", { Nom, Prenom, email, phone,photoAvatar,gender ,DateNaissance ,Nationalite  , cnicNo ,address}
+          .post("https://backend-admin-iota.vercel.app/Client/AjoutCl", { Nom, Prenom, email, phone,photoAvatar,gender ,DateNaissance ,Nationalite  , cnicNo ,address}
           ,{ headers: {
             'Content-Type': 'multipart/form-data',
           },})

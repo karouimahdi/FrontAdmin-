@@ -25,7 +25,7 @@ const Passwordforget = () => {
 	
 		// Handle validations
 		axios
-		  .post("http://localhost:3001/agent/reset", {email})
+		  .post("https://backend-admin-iota.vercel.app/agent/reset", {email})
 		
 		 
 		  .then(response => {

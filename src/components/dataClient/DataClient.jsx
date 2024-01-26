@@ -20,7 +20,7 @@ const DataClient = () => {
       getUsers();
     },[]);
     const getUsers = async () =>{
-      const response = await axios.get("http://localhost:3001/Client/afficheCl");
+      const response = await axios.get("https://backend-admin-iota.vercel.app/Client/afficheCl");
       if(response.status===200){
         setData(response.data)
       }
@@ -29,7 +29,7 @@ const DataClient = () => {
     // const handleDelete = async (id) => {
     //   if(window.confirm("Are you sure that you wanted to delete this client")
     //   ){
-    //     const response = await axios.delete(`http://localhost:3001/Chauff/destroychauff/${id}`);
+    //     const response = await axios.delete(`https://backend-admin-iota.vercel.app/Chauff/destroychauff/${id}`);
     //     if(response.status===200){
     //       toast.success('Agent Deleted with Success !', {
     //         position: toast.POSITION.TOP_RIGHT
