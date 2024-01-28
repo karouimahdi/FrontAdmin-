@@ -58,7 +58,7 @@ const SingleC = () => {
       });
   
         //navigate("/users")
-        setTimeout(()=>navigate("/Chauffeur"),5000);
+        setTimeout(()=>navigate("/Chauffeur"),3000);
         console.log(response.Nom)
   
         
