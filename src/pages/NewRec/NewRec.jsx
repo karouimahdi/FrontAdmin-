@@ -37,7 +37,7 @@ console.log("cin",CiN)
         }
         // Handle validations
         axios
-          .post("https://backend-admin-iota.vercel.app/Rec/add", { titre,objectrec,daterec,CiN,agent })
+          .post("http://localhost:3001/Rec/add", { titre,objectrec,daterec,CiN,agent })
           .then(response => {
         
             console.log(response)

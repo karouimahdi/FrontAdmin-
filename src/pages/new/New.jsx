@@ -60,7 +60,7 @@ const phoneRegex = /^[0-9]{8}$/;
 
   // Handle validations
   axios
-    .post("https://backend-admin-iota.vercel.app/agent/AjoutAg", { Nom, Prenom, email, phone,photoAvatar,gender , role ,DateNaissance ,Nationalite}
+    .post("http://localhost:3001/agent/AjoutAg", { Nom, Prenom, email, phone,photoAvatar,gender , role ,DateNaissance ,Nationalite}
     ,{ headers: {
       'Content-Type': 'multipart/form-data',
     },})

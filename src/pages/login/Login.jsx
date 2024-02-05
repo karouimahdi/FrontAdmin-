@@ -25,7 +25,7 @@ const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   
       // Handle validations
       axios
-        .post("https://backend-admin-iota.vercel.app/api/login", { email, password })
+        .post("http://localhost:3001/api/login", { email, password })
         .then(response => {
           const user = response.data
           setRole(user.role);

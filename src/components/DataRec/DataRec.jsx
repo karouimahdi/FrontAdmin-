@@ -30,14 +30,14 @@ const Datatable = () => {
   }, [role]);
   
   const getrec = async () =>{
-    const response = await axios.get("https://backend-admin-iota.vercel.app/Rec/show");
+    const response = await axios.get("http://localhost:3001/Rec/show");
     if(response.status===200){
       setData(response.data)
       console.log("dataaa",response.data)
     }
   };
   const getrecid = async (id)  => {
-    const response = await axios.get(`https://backend-admin-iota.vercel.app/Rec/getrec/${userid}`);
+    const response = await axios.get(`http://localhost:3001/Rec/getrec/${userid}`);
     if(response.status===200){
         setData(response.data)
    console.log("data" , response.data)

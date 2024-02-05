@@ -37,7 +37,7 @@ const [isImageOpen, setIsImageOpen] = useState(false);
   console.log("useridvoit2", id);
   
   const getSingleUservoi = async (id)  => {
-    const response = await axios.get(`https://backend-admin-iota.vercel.app/Voi/getvoi/${id}`);
+    const response = await axios.get(`http://localhost:3001/Voi/getvoi/${id}`);
     if(response.status===200){
    setUser({ ...response.data })
    console.log("dataVoiture2" , response.data)
