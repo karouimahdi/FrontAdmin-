@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 export const ChaufColumns = [
     
 
@@ -6,12 +7,17 @@ export const ChaufColumns = [
         headerName: "Nom d'utilisateur",
         width: 160,
         renderCell: (params) => {
-          return (
-            <div className="cellWithImg">
-         <img className="cellImg" src={params.row.photoAvatar} alt="avatar" />
-              {params.row.username}
-            </div>
-          );
+            // Convert the Buffer to a base64 string
+            const base64Photo = `data:image/png;base64,${Buffer.from(params.row?.photoAvatar).toString('base64')}`;
+            return (
+              <div className="cellWithImg">
+                <img className="cellImg" src={base64Photo} alt="avatar" />
+                {params.row.username}
+              </div>
+            );
+        
+            // Fallback if photoAvatar is not a Buffer or not available
+           
         },
       },
     {

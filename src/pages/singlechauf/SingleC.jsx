@@ -11,6 +11,8 @@ import ListVoi from '../../components/tablevoiture/TableVoi';
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { Buffer } from 'buffer';
+
 const SingleC = () => {
 
     const [user , setUser] = useState()
@@ -37,7 +39,10 @@ const SingleC = () => {
     }
     console.log("USER**" , user)
     
+    const base64PhotoAvatar = user ? Buffer.from(user.photoAvatar.data).toString('base64') : null;
     
+    
+
   const handleSubmit = () => {
     // Prevent the default submit and page reload
   
@@ -68,7 +73,7 @@ const SingleC = () => {
      
   .catch(err =>{
     console.warn(err)
-    toast.error('Email exist Already !', {
+    toast.error('Email exist Alre13ady !', {
       position: toast.POSITION.TOP_RIGHT
   });
   })
@@ -130,8 +135,8 @@ const SingleC = () => {
                 <h1 className="title">Information</h1>
                 <div className="item">
                   <img
-                    src={user && user.photoAvatar}
-                    alt=""
+    src={`data:image/png;base64,${base64PhotoAvatar}`}
+    alt=""
                     className="itemImg"
                   />
                   <div className="details">

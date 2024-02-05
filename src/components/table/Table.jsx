@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
+import { Buffer } from 'buffer';
 
 const List = () => {
 
@@ -44,6 +45,11 @@ const [isImageOpen, setIsImageOpen] = useState(false);
    console.log("data" , response.data)
     }
   }
+  const base64PhotoCin = user ? Buffer.from(user.photoCin.data).toString('base64') : null;
+    const base64PhotoVTC = user ? Buffer.from(user.photoVtc.data).toString('base64') : null;
+    const base64PhotoPermisRec = user ? Buffer.from(user.photoPermisRec.data).toString('base64') : null;
+    const base64PhotoPermisVer = user ? Buffer.from(user.photoPermisVer.data).toString('base64') : null;
+
   console.log("USER**" , user)
 
   const handleImageClick = (image) => {
@@ -75,20 +81,23 @@ const [isImageOpen, setIsImageOpen] = useState(false);
           
               <TableCell className="tableCell">
                 <div className="cellWrapper">
-                  <img src={user && user.photoCin} alt="" className="image"  onClick={() => handleImageClick(user && user.photoCin)}/>
+                  <img src={`data:image/png;base64,${base64PhotoCin}`}
+     alt="" className="image"  onClick={() => handleImageClick(user && user.photoCin)}/>
                   {isImageOpen && clickedImage === user.photoCin && (
       <div className="imageOverlay">
         <span className="close" onClick={handleCloseImage}>
           &times;
         </span>
-        <img src={user && user.photoCin} alt="" className="fullImage" />
+        <img src={`data:image/png;base64,${base64PhotoCin}`}
+     alt="" className="fullImage" />
       </div>
     )}
                 </div>
               </TableCell>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
-                  <img src={user && user.photoPermisRec} alt="" className="image" onClick={() => handleImageClick(user && user.photoPermisRec)} />
+                  <img src={`data:image/png;base64,${base64PhotoPermisRec}`}
+     alt="" className="image" onClick={() => handleImageClick(user && user.photoPermisRec)} />
                 
 
                   {isImageOpen && clickedImage === user.photoPermisRec && (
@@ -96,14 +105,16 @@ const [isImageOpen, setIsImageOpen] = useState(false);
         <span className="close" onClick={handleCloseImage}>
           &times;
         </span>
-        <img src={user && user.photoPermisRec} alt="" className="fullImage" />
+        <img src={`data:image/png;base64,${base64PhotoPermisRec}`}
+     alt="" className="fullImage" />
       </div>
     )}
                 </div>
               </TableCell>
               <TableCell className="tableCell">
                 <div className="cellWrapper"> 
-                  <img src={user && user.photoPermisVer} alt="" className="image" onClick={() => handleImageClick(user && user.photoPermisVer)} />
+                  <img src={`data:image/png;base64,${base64PhotoPermisVer}`}
+     alt="" className="image" onClick={() => handleImageClick(user && user.photoPermisVer)} />
                  
 
                   {isImageOpen && clickedImage === user.photoPermisVer && (
@@ -111,14 +122,16 @@ const [isImageOpen, setIsImageOpen] = useState(false);
         <span className="close" onClick={handleCloseImage}>
           &times;
         </span>
-        <img src={user && user.photoPermisVer} alt="" className="fullImage" />
+        <img src={`data:image/png;base64,${base64PhotoPermisVer}`}
+     alt="" className="fullImage" />
       </div>
     )}
                 </div>
               </TableCell>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
-                  <img src={user && user.photoVtc} alt="" className="image"  onClick={() => handleImageClick(user && user.photoVtc)}/>
+                  <img src={`data:image/png;base64,${base64PhotoVTC}`}
+     alt="" className="image"  onClick={() => handleImageClick(user && user.photoVtc)}/>
                  
 
                   {isImageOpen && clickedImage === user.photoVtc && (
@@ -126,7 +139,8 @@ const [isImageOpen, setIsImageOpen] = useState(false);
         <span className="close" onClick={handleCloseImage}>
           &times;
         </span>
-        <img src={user && user.photoVtc} alt="" className="fullImage" />
+        <img src={`data:image/png;base64,${base64PhotoVTC}`}
+     alt="" className="fullImage" />
       </div>
     )}
                 </div>
