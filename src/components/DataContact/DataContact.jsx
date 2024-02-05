@@ -25,7 +25,7 @@ const DataContact = () => {
     }, [role]);
     
     const getcontact = async () =>{
-      const response = await axios.get("http://localhost:3001/Con/show");
+      const response = await axios.get("https://backend-admin-iota.vercel.app/Con/show");
       if(response.status===200){
         setData(response.data)
         console.log("dataaa",response.data)
